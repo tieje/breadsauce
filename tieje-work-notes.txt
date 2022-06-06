@@ -1,0 +1,47 @@
+6/5/2022
+I'd like to make this site a single page while exploring new technologies.
+This site will serve the purpose of being the wedding website and part of my portfolio.
+References
+https://github.com/fireship-io/skydiving-cat-parallax
+https://www.youtube.com/watch?v=UgIwjLg4ONk
+
+yarn is faster than npm as a package manager
+vite is MUCH faster as a bundler than anything else I've ever used before.
+I'm really impressed by them both, but especially by Vite.
+
++ use yarn and vite to build a react-ts template
+    yarn create vite breadsauce --template react-ts
++ yarn install
++ upgrade yarn
+    curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
++ test dev server
+    npm run dev
++ install tailwindCSS
+    https://tailwindcss.com/docs/guides/vite
++ install react-spring
+    yarn add react-spring 
++ install @react-spring/parallax
+    yarn add @react-spring/parallax
+
+6/6/2022
+
+
+Plan
+
+1. Create the static components first while studying react-spring
+2. Add animation later?
+
+TODO
+
+Collect Pictures
+
+- individuals alone
+- us together
+
+Create Static Pages
+
+- static information frontpage
+- picture and caption page
+- poetry page
+- picture and banter page
+- final page that just says forever
