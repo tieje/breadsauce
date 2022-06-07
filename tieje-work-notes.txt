@@ -31,6 +31,8 @@ What I'm going to do is run a few lines at different speeds and then have a stic
 + play around with parallax
 + figure out how to use parallax in React Spring for your purposes
 
+- I would like the frontpage to play a brief animation of a letter dropping from above and opening - transforming into the wedding info.
+
 Plan
 
 1. Create the static components first while studying react-spring
