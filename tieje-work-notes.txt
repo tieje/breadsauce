@@ -25,6 +25,11 @@ I'm really impressed by them both, but especially by Vite.
 
 6/6/2022
 
+What I actually need a sticky div until a certain point and some animation and that's it.
+What I'm going to do is run a few lines at different speeds and then have a sticky punchline off-screen that stays for a while.
+
++ play around with parallax
++ figure out how to use parallax in React Spring for your purposes
 
 Plan
 
