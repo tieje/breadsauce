@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         'verdana': ['verdana'],
         'caveat': ['caveat'],
+      },
+      backgroundImage: {
+        'villa': 'url("/breadsauce/src/assets/images/villa.jpeg")'
       }
     },
   },

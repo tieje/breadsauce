@@ -18,7 +18,8 @@ import BREADSAUCE_WINE from '../src/assets/images/breadsauce/breadsauce_wine.jpg
 // bread
 import SOLO_NEON from '../src/assets/images/bread_solo/solo_neon.jpg'
 import SOLO_HIKING from '../src/assets/images/bread_solo/solo_hiking.jpg'
-
+// villa
+import VILLA from '../src/assets/images/villa.jpeg'
 // Functional Imports
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { animated } from 'react-spring'
@@ -35,16 +36,28 @@ function App() {
   const ENVELOPE_OPEN_BOTTOM_OPENING = "-100,-50 0,10 100,-50"
   // Bottom Envelope
   const ENVELOPE_OPEN_BOTTOM_PART = '-100,-50 -100,50 100,50 100,-50 0,10'
+  const ENVELOPE_OPEN_MIDDLE_PART = "-100,-50 0,10 100,-50"
   const ENVELOPE_OPEN_BOTTOM_FLAP_LEFT = "-100,40 -20,-2"
   const ENVELOPE_OPEN_BOTTOM_FLAP_RIGHT = "100,40 20,-2"
   const ENVELOPE_FLAP_UP = "-100,-50 0,-120 100,-50"
-
   return (
     <main className='grid place-content-center border border-black text-center font-caveat text-2xl font-bold'>
       <Parallax
         pages={20}
       >
-        {/*Letter Opening*/}
+        {/*Letter Opening Animation*/}
+        {/*Villa Background*/}
+        <ParallaxLayer
+          offset={1.2}
+          speed={.7}
+        >
+          <img
+            className='h-screen w-screen'
+            src={VILLA}
+            alt='villa bianca'
+          />
+        </ParallaxLayer>
+        {/*Closed Envelope*/}
         <ParallaxLayer
           className='grid place-content-center'
           //offset={.2}
@@ -69,11 +82,13 @@ function App() {
             <polyline points={ENVELOPE_OPEN_BOTTOM_FLAP_LEFT} />
             <polyline points={ENVELOPE_OPEN_BOTTOM_FLAP_RIGHT} />
             <polyline points={ENVELOPE_TOP} />
+
           </animated.svg>
         </ParallaxLayer>
+        {/*Pieces behind the letter*/}
         <ParallaxLayer
           className='grid place-content-center'
-          offset={.75}
+          offset={1.35}
           speed={0}
         //sticky={{ start: .39, end: 1 }}
         >
@@ -91,12 +106,14 @@ function App() {
           //strokeDashoffset={x.to(x => (1 - x) * 156)}
           >
             <polyline points={ENVELOPE_FLAP_UP} />
+            <polygon points={ENVELOPE_OPEN_MIDDLE_PART} />
           </animated.svg>
         </ParallaxLayer>
+        {/*Info letter*/}
         <ParallaxLayer
           className='grid place-content-center'
-          offset={.8}
-          speed={.6}
+          offset={1.2}
+          speed={.35}
         >
           <div
             className='relative h-[370px] w-[300px] border-4 border-black bg-white'
@@ -139,11 +156,12 @@ function App() {
             </article>
           </div>
         </ParallaxLayer>
+        {/*Opened letter*/}
         <ParallaxLayer
           className='grid place-content-center'
           //offset={.2}
           //speed={.5}
-          sticky={{ start: .75, end: .75 }}
+          sticky={{ start: 1.35, end: 1.35 }}
         >
           <animated.svg
             //className='border border-black'
@@ -255,7 +273,7 @@ function App() {
           </h1>
         </ParallaxLayer>
       </Parallax>
-    </main>
+    </main >
   )
 }
 
