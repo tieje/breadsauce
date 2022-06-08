@@ -63,6 +63,10 @@ Plan
 
 TODO
 
+- get poems from Mayenne
+- update pictures such that they appear as regular pictures on mobile md size and below
+    This must be done by render two entirely different applications: one for mobile, and one for desktop.
+
 Create Static Pages
 
 - poetry page
