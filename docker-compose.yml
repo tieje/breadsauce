@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  frontend:
+    command: serve -l 3001 -s dist
+    container_name: breadsauce
+    build:
+      context: ./breadsauce
+      dockerfile: Dockerfile
+    ports:
+      - 3001:3001

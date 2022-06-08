@@ -41,6 +41,7 @@ What I'm going to do is run a few lines at different speeds and then have a stic
 Parallax picture component is a colossal failure. Somehow it worked before, it looks like I'll need to build everything myself by hand. I'm not sure why it worked before and not this time...
 I'm going to transition away from this and I'll define everything myself.
 
+
 Plan
 
 1. Create the static components first while studying react-spring

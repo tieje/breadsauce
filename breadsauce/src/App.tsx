@@ -23,14 +23,9 @@ import SOLO_HIKING from '../src/assets/images/bread_solo/solo_hiking.jpg'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { animated } from 'react-spring'
 import './index.css'
-import ParallaxPicture, { ParallaxPicturePropsType } from './components/ParallaxPicture/ParallaxPicture'
 // Variable Imports
-import { PARALLAX_PICTURES } from '../Variables/ParallaxPicturesSection1'
-import { ImgAlts } from './types/ImgAlts'
 
 function App() {
-  //const POINTS = "0,200 50,25 50,75 100,0"
-  //const POINT = "-100,-50 -100,50 100,50 100,-50, 0,-120 -100,-50 0,0 100,-50"
   // Close Envelope
   const ENVELOPE_CLOSED = "-100,-50 -100,50 100,50 100,-50"
   const ENVELOPE_TOP = "-100,-50 100,-50"
@@ -38,69 +33,12 @@ function App() {
   // Open Envelope
   //const ENVELOPE_OPEN = "-100,-50 -100,50 100,50 100,-50 0,-120"
   const ENVELOPE_OPEN_BOTTOM_OPENING = "-100,-50 0,10 100,-50"
-  //const [flip, set] = useState(false)
   // Bottom Envelope
-  //const [width, height] = useWindowSize()
   const ENVELOPE_OPEN_BOTTOM_PART = '-100,-50 -100,50 100,50 100,-50 0,10'
   const ENVELOPE_OPEN_BOTTOM_FLAP_LEFT = "-100,40 -20,-2"
   const ENVELOPE_OPEN_BOTTOM_FLAP_RIGHT = "100,40 20,-2"
   const ENVELOPE_FLAP_UP = "-100,-50 0,-120 100,-50"
-  /*
-  const { x } = useSpring({
-    reset: true,
-    reverse: flip,
-    from: { x: 0 },
-    x: 1,
-    delay: 200,
-    config: config.molasses,
-    onRest: () => set(!flip),
-  })*/
-  // functions
-  const handlePicAssignment = (img_alt: ImgAlts) => {
-    let img_src = PRO_PIC
-    switch (img_alt) {
-      case 'umaru':
-        img_src = umaru
-        break
-      case 'disco_rabbits':
-        img_src = disco_rabbits
-        break
-      case 'breadsauce_first':
-        img_src = BREADSAUCE_FIRST
-        break
-      case 'breadsauce_christmas':
-        img_src = BREADSAUCE_CHRISTMAS
-        break
-      case 'breadsauce_date':
-        img_src = BREADSAUCE_DATE
-        break
-      case 'breadsauce_normal':
-        img_src = BREADSAUCE_NORMAL
-        break
-      case 'breadsauce_olives_oils':
-        img_src = BREADSAUCE_OLIVES_OILS
-        break
-      case 'breadsauce_snow':
-        img_src = BREADSAUCE_SNOW
-        break
-      case 'breadsauce_thanksgiving':
-        img_src = BREADSAUCE_THANKSGIVING
-        break
-      case 'breadsauce_weird':
-        img_src = BREADSAUCE_WEIRD
-        break
-      case 'breadsauce_wine':
-        img_src = BREADSAUCE_WINE
-        break
-      case 'solo_neon':
-        img_src = SOLO_NEON
-        break
-      case 'solo_hiking':
-        img_src = SOLO_HIKING
-        break
-    }
-    return (img_src)
-  }
+
   return (
     <main className='grid place-content-center border border-black text-center font-caveat text-2xl font-bold'>
       <Parallax
@@ -158,7 +96,7 @@ function App() {
         <ParallaxLayer
           className='grid place-content-center'
           offset={.8}
-          speed={.5}
+          speed={.6}
         >
           <div
             className='relative h-[370px] w-[300px] border-4 border-black bg-white'
@@ -230,21 +168,32 @@ function App() {
           </animated.svg>
         </ParallaxLayer>
         {/* Page < 1 */}
-        {/* Pictures */}
-        {PARALLAX_PICTURES.map((pic: ParallaxPicturePropsType) => {
-          return (
-            <ParallaxPicture key={pic.img_alt} ImgAlt={handlePicAssignment(pic.img_alt)} props={pic} />
-          )
-        })}
+        {/* Pictures Section 1 */}
+        <ParallaxLayer offset={2} speed={.2}><img src={BREADSAUCE_FIRST} className='w-[20%] ml-[5%] rounded-lg' /></ParallaxLayer>
+        <ParallaxLayer offset={2.1} speed={.1}><img src={BREADSAUCE_SNOW} className='w-[25%] ml-[30%] rounded-lg' /></ParallaxLayer>
+        <ParallaxLayer offset={2.2} speed={.2}><img src={BREADSAUCE_THANKSGIVING} className='w-[25%] ml-[70%] rounded-lg' /></ParallaxLayer>
+        <ParallaxLayer offset={2.1} speed={2.1}><img src={disco_rabbits} className='w-[25%] ml-[50%] rounded-lg' /></ParallaxLayer>
+        <ParallaxLayer offset={2.7} speed={1}><img src={BREADSAUCE_WINE} className='w-[25%] ml-[10%] rounded-lg' /></ParallaxLayer>
+        <ParallaxLayer offset={2.7} speed={.4}><img src={SOLO_NEON} className='w-[15%] ml-[55%] rounded-lg' /></ParallaxLayer>
+        <ParallaxLayer offset={2.9} speed={.3}><img src={BREADSAUCE_WEIRD} className='w-[15%] ml-[75%] rounded-lg' /></ParallaxLayer>
+        <ParallaxLayer offset={2.9} speed={.1}><img src={BREADSAUCE_DATE} className='w-[25%] ml-[35%] rounded-lg' /></ParallaxLayer>
+        <ParallaxLayer offset={3} speed={.8}><img src={SOLO_HIKING} className='w-[10%] ml-[5%] rounded-lg' /></ParallaxLayer>
+        <ParallaxLayer offset={3} speed={.4}><img src={BREADSAUCE_CHRISTMAS} className='w-[15%] ml-[17%] rounded-lg' /></ParallaxLayer>
+        <ParallaxLayer offset={2.95} speed={.2}><img src={BREADSAUCE_OLIVES_OILS} className='w-[15%] ml-[5%] rounded-lg' /></ParallaxLayer>
+        <ParallaxLayer offset={3} speed={.25}><img src={PRO_PIC} className='w-[10%] ml-[63%] rounded-lg' /></ParallaxLayer>
         {/* Page > 3*/}
         {/*spacer so that the others don't catch up*/}
         <ParallaxLayer
           className='grid place-content-center'
-          sticky={{ start: 3, end: 4 }}
+          sticky={{ start: 3.5, end: 4 }}
         >
           <h1>Work in Progress</h1>
           <h1>Formal attire, but feel free to wear whatever you think makes you look your best.</h1>
         </ParallaxLayer>
+        {/* Page > 4 */}
+        {/* Poem 1 */}
+        {/* Picture Section 2 - Composable CSS animation with anim xyz */}
+        {/* Joke Banter Page */}
         {/* Practice */}
         {/*<ParallaxLayer
           className='grid place-content-center'
