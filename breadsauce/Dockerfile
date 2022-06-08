@@ -4,7 +4,7 @@ WORKDIR /breadsauce
 RUN apt-get update
 RUN npm install -g npm@8.12.1
 RUN npm install -g typescript && \
-    npm install -g serve && \
+    npm install -g serve
 COPY package.json /breadsauce/
 RUN yarn install
 COPY . .
