@@ -2,8 +2,9 @@
 FROM node:16.14.2
 WORKDIR /breadsauce
 RUN apt-get update
-RUN npm install -g typescript
-RUN npm install -g serve
+RUN npm install -g typescript && \
+    npm install -g serve && \
+    npm install -g npm@8.12.1
 COPY package.json /breadsauce/
 RUN yarn install
 COPY . .
