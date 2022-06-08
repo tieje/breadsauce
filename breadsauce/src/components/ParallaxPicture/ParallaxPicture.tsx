@@ -2,27 +2,37 @@ import { ParallaxLayer } from "@react-spring/parallax"
 import { ImgAlts } from '../../types/ImgAlts'
 
 type ParallaxPicturePropsType = {
+    img_alt: ImgAlts
     offset: number
     speed: number
-    col_start: number
-    col_span: number
-    img_alt: ImgAlts
+    col_start: string
+    col_span: string
+    rightSide?: boolean
 }
 const ParallaxPicture = ({ ImgAlt, props }: { ImgAlt: string, props: ParallaxPicturePropsType }) => {
+    let mainDivStyle = 'grid grid-cols-12 w-screen gap-4 '
+    const firstDivStyle = 'grid col-span-' + props.col_start
+    const imgStyle = 'rounded-lg grid col-span-' + props.col_span
+    if (props.rightSide) {
+        mainDivStyle = mainDivStyle + 'ml-[25%]'
+    }
+    //const finalDivStyle = 'grid cols-'
     return (
         <ParallaxLayer
-            className='grid grid-cols-12'
             offset={props.offset}
             speed={props.speed}
         >
-            <div className={`grid col-span-${props.col_start}`}></div>
-            <img
-                className={`grid col-span-${props.col_span}`}
-                src={ImgAlt}
-                alt={props.img_alt}
-            />
-            <div className={`grid col-span-${12 - props.col_start - props.col_span}`}></div>
-        </ParallaxLayer>
+            <div
+                className={mainDivStyle}
+            >
+                <div className={firstDivStyle}></div>
+                <img
+                    className={imgStyle}
+                    src={ImgAlt}
+                    alt={props.img_alt}
+                />
+            </div>
+        </ParallaxLayer >
     )
 }
 export type {

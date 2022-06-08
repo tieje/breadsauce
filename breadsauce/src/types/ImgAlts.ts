@@ -1,7 +1,16 @@
 type ImgAlts = 'breadsauce_first' |
+    // gifs
+    'umaru' |
     'disco_rabbits' |
     // breadsauce
-    
+    'breadsauce_christmas' |
+    'breadsauce_date' |
+    'breadsauce_normal' |
+    'breadsauce_olives_oils' |
+    'breadsauce_snow' |
+    'breadsauce_thanksgiving' |
+    'breadsauce_weird' |
+    'breadsauce_wine' |
     // sauce
     'pro_pic' |
     // bread
@@ -12,6 +21,6 @@ type ImgAlts = 'breadsauce_first' |
     'solo_ghost' |
     'solo_hiking' |
     'solo_neon' |
-    'solo_tinder' 
+    'solo_tinder'
 
 export type { ImgAlts }

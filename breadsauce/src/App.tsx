@@ -1,8 +1,23 @@
 // Picture imports
-import BREADSAUCE_FIRST from '../src/assets/images/breadsauce/breadsauce_first.jpg'
-import PRO_PIC from '../src/assets/images/sauce_solo/pro_pic.jpg'
-import disco_rabbits from './assets/images/gifs/disco_rabbits.gif'
 import WEDDING_BG from './assets/images/wedding-invite-bg2.png'
+// sauce solo
+import PRO_PIC from '../src/assets/images/sauce_solo/pro_pic.jpg'
+// gifs
+import disco_rabbits from './assets/images/gifs/disco_rabbits.gif'
+import umaru from './assets/images/gifs/umaru.gif'
+// breadsauce
+import BREADSAUCE_FIRST from '../src/assets/images/breadsauce/breadsauce_first.jpg'
+import BREADSAUCE_CHRISTMAS from '../src/assets/images/breadsauce/breadsauce_christmas.jpg'
+import BREADSAUCE_DATE from '../src/assets/images/breadsauce/breadsauce_date.jpg'
+import BREADSAUCE_NORMAL from '../src/assets/images/breadsauce/breadsauce_normal.jpg'
+import BREADSAUCE_OLIVES_OILS from '../src/assets/images/breadsauce/breadsauce_olives_oils.jpg'
+import BREADSAUCE_THANKSGIVING from '../src/assets/images/breadsauce/breadsauce_thanksgiving.jpg'
+import BREADSAUCE_SNOW from '../src/assets/images/breadsauce/breadsauce_snow.jpg'
+import BREADSAUCE_WEIRD from '../src/assets/images/breadsauce/breadsauce_weird.jpg'
+import BREADSAUCE_WINE from '../src/assets/images/breadsauce/breadsauce_wine.jpg'
+// bread
+import SOLO_NEON from '../src/assets/images/bread_solo/solo_neon.jpg'
+import SOLO_HIKING from '../src/assets/images/bread_solo/solo_hiking.jpg'
 
 // Functional Imports
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
@@ -10,7 +25,8 @@ import { animated } from 'react-spring'
 import './index.css'
 import ParallaxPicture, { ParallaxPicturePropsType } from './components/ParallaxPicture/ParallaxPicture'
 // Variable Imports
-import { PARALLAX_PICTURES } from '../Variables/ParallaxPictures'
+import { PARALLAX_PICTURES } from '../Variables/ParallaxPicturesSection1'
+import { ImgAlts } from './types/ImgAlts'
 
 function App() {
   //const POINTS = "0,200 50,25 50,75 100,0"
@@ -39,6 +55,52 @@ function App() {
     config: config.molasses,
     onRest: () => set(!flip),
   })*/
+  // functions
+  const handlePicAssignment = (img_alt: ImgAlts) => {
+    let img_src = PRO_PIC
+    switch (img_alt) {
+      case 'umaru':
+        img_src = umaru
+        break
+      case 'disco_rabbits':
+        img_src = disco_rabbits
+        break
+      case 'breadsauce_first':
+        img_src = BREADSAUCE_FIRST
+        break
+      case 'breadsauce_christmas':
+        img_src = BREADSAUCE_CHRISTMAS
+        break
+      case 'breadsauce_date':
+        img_src = BREADSAUCE_DATE
+        break
+      case 'breadsauce_normal':
+        img_src = BREADSAUCE_NORMAL
+        break
+      case 'breadsauce_olives_oils':
+        img_src = BREADSAUCE_OLIVES_OILS
+        break
+      case 'breadsauce_snow':
+        img_src = BREADSAUCE_SNOW
+        break
+      case 'breadsauce_thanksgiving':
+        img_src = BREADSAUCE_THANKSGIVING
+        break
+      case 'breadsauce_weird':
+        img_src = BREADSAUCE_WEIRD
+        break
+      case 'breadsauce_wine':
+        img_src = BREADSAUCE_WINE
+        break
+      case 'solo_neon':
+        img_src = SOLO_NEON
+        break
+      case 'solo_hiking':
+        img_src = SOLO_HIKING
+        break
+    }
+    return (img_src)
+  }
   return (
     <main className='grid place-content-center border border-black text-center font-caveat text-2xl font-bold'>
       <Parallax
@@ -170,33 +232,18 @@ function App() {
         {/* Page < 1 */}
         {/* Pictures */}
         {PARALLAX_PICTURES.map((pic: ParallaxPicturePropsType) => {
-          let img_src: string = PRO_PIC;
-          switch (pic.img_alt) {
-            case 'breadsauce_first':
-              img_src = BREADSAUCE_FIRST
-          }
           return (
-            <ParallaxPicture ImgAlt={img_src} props={pic} />
+            <ParallaxPicture ImgAlt={handlePicAssignment(pic.img_alt)} props={pic} />
           )
         })}
-        <ParallaxLayer
-          className='grid grid-cols-12'
-          offset={2.1}
-          speed={3}
-        >
-          <div className='grid col-span-4'></div>
-          <img
-            className='grid col-span-3'
-            src={disco_rabbits}
-            alt={'disco_rabbits'}
-          />
-          <div className='grid col-span-5'></div>
-        </ParallaxLayer>
-        {/*spacer so that they others don't catch up*/}
+        {/* Page > 3*/}
+        {/*spacer so that the others don't catch up*/}
         <ParallaxLayer
           className='grid place-content-center'
-          sticky={{ start: 1.1, end: 2 }}
+          sticky={{ start: 3, end: 4 }}
         >
+          <h1>Work in Progress</h1>
+          <h1>Formal attire, but feel free to wear whatever you think makes you look your best.</h1>
         </ParallaxLayer>
         {/* Practice */}
         {/*<ParallaxLayer
