@@ -233,7 +233,7 @@ function App() {
         {/* Pictures */}
         {PARALLAX_PICTURES.map((pic: ParallaxPicturePropsType) => {
           return (
-            <ParallaxPicture ImgAlt={handlePicAssignment(pic.img_alt)} props={pic} />
+            <ParallaxPicture key={pic.img_alt} ImgAlt={handlePicAssignment(pic.img_alt)} props={pic} />
           )
         })}
         {/* Page > 3*/}
