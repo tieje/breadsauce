@@ -44,7 +44,17 @@ I'm going to transition away from this and I'll define everything myself.
 + updated packages
     yarn upgrade
 + currently hosting on RPI
-
++ add background picture to fontpage
++ get money-shot screenshot
++ updated porfolio
++ individuals alone
++ us together
++ static information frontpage
+x picture and caption page
+    picture, no caption
++ final page that just says forever
+~ high res picture of villa
+    close enough
 
 Plan
 
@@ -53,22 +63,10 @@ Plan
 
 TODO
 
-- host this site on your RPI for now.
-
-Collect Pictures
-
-+ individuals alone
-+ us together
-- high res picture of villa
-
 Create Static Pages
 
-+ static information frontpage
-x picture and caption page
-    picture, no caption
 - poetry page
 - picture and banter page
-+ final page that just says forever
 
 Later
 
