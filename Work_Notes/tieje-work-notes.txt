@@ -40,6 +40,7 @@ What I'm going to do is run a few lines at different speeds and then have a stic
 
 Parallax picture component is a colossal failure. Somehow it worked before, it looks like I'll need to build everything myself by hand. I'm not sure why it worked before and not this time...
 I'm going to transition away from this and I'll define everything myself.
+Unfortunately, I still can't use animxyz and I think it's because I really need to just use one animation library at a time.
 
 + updated packages
     yarn upgrade
@@ -55,6 +56,8 @@ x picture and caption page
 + final page that just says forever
 ~ high res picture of villa
     close enough
++ install animxyz
+    yarn add @animxyz/react
 
 Plan
 
@@ -74,4 +77,5 @@ Create Static Pages
 
 Later
 
+- make it so that the letter spins and comes from and stops slight
 - Host this site on AWS. See what you can do for free.

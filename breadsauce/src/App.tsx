@@ -22,7 +22,7 @@ import SOLO_HIKING from '../src/assets/images/bread_solo/solo_hiking.jpg'
 import VILLA from '../src/assets/images/villa.jpeg'
 // Functional Imports
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-import { animated } from 'react-spring'
+import { animated, useTransition } from 'react-spring'
 import './index.css'
 // Variable Imports
 
@@ -40,6 +40,11 @@ function App() {
   const ENVELOPE_OPEN_BOTTOM_FLAP_LEFT = "-100,40 -20,-2"
   const ENVELOPE_OPEN_BOTTOM_FLAP_RIGHT = "100,40 20,-2"
   const ENVELOPE_FLAP_UP = "-100,-50 0,-120 100,-50"
+  /*const spinningLetterFromSky = useTransition(show, {
+    from: {
+
+    }
+  })*/
   return (
     <main className='grid place-content-center border border-black text-center font-caveat text-2xl font-bold'>
       <Parallax

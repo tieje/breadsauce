@@ -11,7 +11,6 @@
 - [yarn](https://yarnpkg.com/) - package manager
     - [corepack](https://nodejs.org/dist/latest/docs/api/corepack.html) - helps with managing versions of package managers
 - [React Spring](https://github.com/pmndrs/react-spring) - for animation, but it's mostly for implementing the parallax effect
-- [Animxyz](https://animxyz.com/) - composable animation library
 
 ## [Context](#content)
 
