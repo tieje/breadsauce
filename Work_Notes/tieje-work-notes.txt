@@ -85,7 +85,8 @@ x make it so that the letter spins and comes from and stops slight
 
 6/11/2022
 
-
+x add white-rose repeating background
+    It just doesn't look that good.
 
 Try and do this for you letter:
 https://codesandbox.io/s/github/pmndrs/react-spring/tree/master/demo/src/sandboxes/card?file=/src/App.tsx
@@ -97,7 +98,6 @@ Plan
 
 TODO
 
-- add white-rose repeating background
 - get poems from Mayenne
 
 Create Static Pages

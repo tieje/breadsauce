@@ -35,8 +35,7 @@ function App() {
   const windowWidthBreakPoint = 900
   return (
     <div
-      className='scroll-smooth font-caveat bg-repeat overflow-x-hidden'
-      style={{ backgroundImage: ROSE_REPEAT }}
+      className='scroll-smooth font-caveat overflow-x-hidden'
     >
       <ClosedLetter />
       <main className='grid place-content-center text-center text-2xl font-bold'>
@@ -228,7 +227,8 @@ function App() {
           {/*spacer so that the others don't catch up*/}
           <ParallaxLayer
             className='grid place-content-center'
-            sticky={width < windowWidthBreakPoint ? { start: 14, end: 15 } : { start: 2.2, end: 2.7 }}
+            sticky={width < windowWidthBreakPoint ? { start: 14, end: 15 } : { start: 2.6, end: 2.7 }}
+          //style={{ backgroundImage: `url(${ROSE_REPEAT})`, backgroundRepeat: 'repeat' }}
           >
             <h1>Work in Progress</h1>
             <h1 className='px-3'>Formal attire, but feel free to wear whatever you think makes you look your best.</h1>
@@ -291,9 +291,11 @@ function App() {
             className='grid place-content-center'
             //offset={19}
             //speed={.05}
-            sticky={width < windowWidthBreakPoint ? { start: 16, end: 17 } : { start: 4, end: 5 }}
+            sticky={width < windowWidthBreakPoint ? { start: 16, end: 17 } : { start: 3.7, end: 4 }}
           >
-            <h1 className='text-8xl font-bold text-pink-300'>
+            <h1
+              className='text-8xl font-bold text-pink-300'
+            >
               Forever
             </h1>
           </ParallaxLayer>
