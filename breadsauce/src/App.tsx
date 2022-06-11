@@ -27,13 +27,17 @@ import './index.css'
 import { ENVELOPE_FLAP_UP, ENVELOPE_OPEN_BOTTOM_FLAP_LEFT, ENVELOPE_OPEN_BOTTOM_FLAP_RIGHT, ENVELOPE_OPEN_BOTTOM_PART, ENVELOPE_OPEN_MIDDLE_PART } from './State/Envelope'
 import ClosedLetter from './ClosedLetter'
 import { useWindowWidth } from '@react-hook/window-size'
+import ROSE_REPEAT from './assets/images/white-rose-repeat.jpeg'
 // Variable Imports
 
 function App() {
   const width = useWindowWidth()
   const windowWidthBreakPoint = 900
   return (
-    <div className='scroll-smooth font-caveat'>
+    <div
+      className='scroll-smooth font-caveat bg-repeat'
+      style={{ backgroundImage: ROSE_REPEAT }}
+    >
       <ClosedLetter />
       <main className='grid place-content-center text-center text-2xl font-bold'>
         <Parallax

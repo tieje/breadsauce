@@ -97,6 +97,7 @@ Plan
 
 TODO
 
+- add white-rose repeating background
 - get poems from Mayenne
 
 Create Static Pages
