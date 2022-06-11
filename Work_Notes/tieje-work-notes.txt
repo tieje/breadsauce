@@ -59,6 +59,37 @@ x picture and caption page
 + install animxyz
     yarn add @animxyz/react
 
+6/10/2022
+
+Parallax might be too overwhelming for other animations being done at the same time on the same page.
+However, I should be able to do it outside of the page.
+The being next to parallax doesn't work very well. I'll need to be a sibling of parallax's parent to work otherwise.
+In this way, I can create sections and animations and it should probably still work, but without parallax.
+
+It's possible that the hooks don't work well with TailwindCSS because of the re-rendering.
+Animation hooks work as intended when imported from another component. Probably a state management re-render thing.
+Unfortunately, clicking does not work as intended, meaning there is something rendered on top of it.
+When take outside of the parallax component, everything works as intended.
+Being a sibling of parallax does not work as intended.
+TailwindCSS does not interfere with the css inline styling.
+Parallax does interfere with clicking on pictures.
+I think what I'll do is have two different experiences for mobile and web.
+I think I would like to have a kitchen table 
+
+x change the closed letter to an offset and speed rather than sticky
+x add an SVG flower on the card
++ update pictures such that they appear as regular pictures on mobile md size and below
+    This must be done by render two entirely different applications: one for mobile, and one for desktop.
++ finalize the design of the frontpage
+x make it so that the letter spins and comes from and stops slight
+
+6/11/2022
+
+
+
+Try and do this for you letter:
+https://codesandbox.io/s/github/pmndrs/react-spring/tree/master/demo/src/sandboxes/card?file=/src/App.tsx
+
 Plan
 
 1. Create the static components first while studying react-spring
@@ -67,8 +98,6 @@ Plan
 TODO
 
 - get poems from Mayenne
-- update pictures such that they appear as regular pictures on mobile md size and below
-    This must be done by render two entirely different applications: one for mobile, and one for desktop.
 
 Create Static Pages
 
@@ -77,5 +106,4 @@ Create Static Pages
 
 Later
 
-- make it so that the letter spins and comes from and stops slight
 - Host this site on AWS. See what you can do for free.

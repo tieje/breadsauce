@@ -22,203 +22,219 @@ import SOLO_HIKING from '../src/assets/images/bread_solo/solo_hiking.jpg'
 import VILLA from '../src/assets/images/villa.jpeg'
 // Functional Imports
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-import { animated, useTransition } from 'react-spring'
+import { animated } from 'react-spring'
 import './index.css'
+import { ENVELOPE_FLAP_UP, ENVELOPE_OPEN_BOTTOM_FLAP_LEFT, ENVELOPE_OPEN_BOTTOM_FLAP_RIGHT, ENVELOPE_OPEN_BOTTOM_PART, ENVELOPE_OPEN_MIDDLE_PART } from './State/Envelope'
+import ClosedLetter from './ClosedLetter'
+import { useWindowWidth } from '@react-hook/window-size'
 // Variable Imports
 
 function App() {
-  // Close Envelope
-  const ENVELOPE_CLOSED = "-100,-50 -100,50 100,50 100,-50"
-  const ENVELOPE_TOP = "-100,-50 100,-50"
-  //const FLAP_DOWN = "-100,-50 0,0 100,-50"
-  // Open Envelope
-  //const ENVELOPE_OPEN = "-100,-50 -100,50 100,50 100,-50 0,-120"
-  const ENVELOPE_OPEN_BOTTOM_OPENING = "-100,-50 0,10 100,-50"
-  // Bottom Envelope
-  const ENVELOPE_OPEN_BOTTOM_PART = '-100,-50 -100,50 100,50 100,-50 0,10'
-  const ENVELOPE_OPEN_MIDDLE_PART = "-100,-50 0,10 100,-50"
-  const ENVELOPE_OPEN_BOTTOM_FLAP_LEFT = "-100,40 -20,-2"
-  const ENVELOPE_OPEN_BOTTOM_FLAP_RIGHT = "100,40 20,-2"
-  const ENVELOPE_FLAP_UP = "-100,-50 0,-120 100,-50"
-  /*const spinningLetterFromSky = useTransition(show, {
-    from: {
-
-    }
-  })*/
+  const width = useWindowWidth()
+  const windowWidthBreakPoint = 900
   return (
-    <main className='grid place-content-center border border-black text-center font-caveat text-2xl font-bold'>
-      <Parallax
-        pages={20}
-      >
-        {/*Letter Opening Animation*/}
-        {/*Villa Background*/}
-        <ParallaxLayer
-          offset={1.2}
-          speed={.7}
+    <div className='scroll-smooth font-caveat'>
+      <ClosedLetter />
+      <main className='grid place-content-center text-center text-2xl font-bold'>
+        <Parallax
+          id='info'
+          pages={width < windowWidthBreakPoint ? 17 : 5}
         >
-          <img
-            className='h-screen w-screen'
-            src={VILLA}
-            alt='villa bianca'
-          />
-        </ParallaxLayer>
-        {/*Closed Envelope*/}
-        <ParallaxLayer
-          className='grid place-content-center'
-          //offset={.2}
-          //speed={.5}
-          sticky={{ start: 0, end: .01 }}
-        >
-          <animated.svg
-            //className='border border-black'
-            style={{ margin: 0, width: 500, height: 500 }}
-            viewBox="-150 -150 300 300"
-            strokeWidth="5"
-            fill="#eeeeee"
-            stroke="rgb(45, 55, 71)"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            //strokeDasharray={156}
-            strokeDasharray={10000}
-          //strokeDashoffset={x.to(x => (1 - x) * 156)}
-          >
-            <polygon points={ENVELOPE_CLOSED} />
-            <polyline points={ENVELOPE_OPEN_BOTTOM_OPENING} />
-            <polyline points={ENVELOPE_OPEN_BOTTOM_FLAP_LEFT} />
-            <polyline points={ENVELOPE_OPEN_BOTTOM_FLAP_RIGHT} />
-            <polyline points={ENVELOPE_TOP} />
-
-          </animated.svg>
-        </ParallaxLayer>
-        {/*Pieces behind the letter*/}
-        <ParallaxLayer
-          className='grid place-content-center'
-          offset={1.35}
-          speed={0}
-        //sticky={{ start: .39, end: 1 }}
-        >
-          <animated.svg
-            //className='border border-black'
-            style={{ margin: 0, width: 500, height: 500 }}
-            viewBox="-150 -150 300 300"
-            strokeWidth="5"
-            fill="white"
-            stroke="rgb(45, 55, 71)"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            //strokeDasharray={156}
-            strokeDasharray={10000}
-          //strokeDashoffset={x.to(x => (1 - x) * 156)}
-          >
-            <polyline points={ENVELOPE_FLAP_UP} />
-            <polygon points={ENVELOPE_OPEN_MIDDLE_PART} />
-          </animated.svg>
-        </ParallaxLayer>
-        {/*Info letter*/}
-        <ParallaxLayer
-          className='grid place-content-center'
-          offset={1.2}
-          speed={.35}
-        >
-          <div
-            className='relative h-[370px] w-[300px] border-4 border-black bg-white'
+          {/*Letter Opening Animation*/}
+          {/*Villa Background*/}
+          <ParallaxLayer
+            offset={0}
+            speed={.1}
           >
             <img
-              className=''
-              src={WEDDING_BG}
-              alt='hm'
-              width='290'
-              height='200'
+              className='h-screen w-screen'
+              src={VILLA}
+              alt='villa bianca'
             />
-            <article
-              className='absolute top-5 pt-12 px-10 grid grid-cols-1 w-full'
-            >
-              <p
-                className='whitespace-pre-wrap text-left pb-20'
-              >
-                To whom it may concern,
-              </p>
-              <p
-                className='whitespace-pre-wrap text-center'
-              >
-                TJ and Mayenne...
-              </p>
-              <p
-                className='whitespace-pre-wrap text-center'
-              >
-                are getting married!
-              </p>
-              <p
-                className='whitespace-pre-wrap text-center'
-              >
-                5pm Sunday Oct 9, 2022
-              </p>
-              <p
-                className='whitespace-pre-wrap text-center'
-              >
-                312 Roosevelt Dr, Seymour, CT
-              </p>
-            </article>
-          </div>
-        </ParallaxLayer>
-        {/*Opened letter*/}
-        <ParallaxLayer
-          className='grid place-content-center'
-          //offset={.2}
-          //speed={.5}
-          sticky={{ start: 1.35, end: 1.35 }}
-        >
-          <animated.svg
-            //className='border border-black'
-            style={{ margin: 0, width: 500, height: 500 }}
-            viewBox="-150 -150 300 300"
-            strokeWidth="5"
-            fill="#eeeeee"
-            stroke="rgb(45, 55, 71)"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            //strokeDasharray={156}
-            strokeDasharray={10000}
-          //strokeDashoffset={x.to(x => (1 - x) * 156)}
+          </ParallaxLayer>
+          {/*Pieces behind the letter*/}
+          <ParallaxLayer
+            className='grid place-content-center'
+            offset={.25}
+            speed={.5}
+          //sticky={{ start: .39, end: 1 }}
           >
-            {/*<polygon points={ENVELOPE_OPEN} />
+            <animated.svg
+              //className='border border-black'
+              style={{ margin: 0, width: 500, height: 500 }}
+              viewBox="-150 -150 300 300"
+              strokeWidth="5"
+              fill="white"
+              stroke="rgb(45, 55, 71)"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              //strokeDasharray={156}
+              strokeDasharray={10000}
+            //strokeDashoffset={x.to(x => (1 - x) * 156)}
+            >
+              <polyline points={ENVELOPE_FLAP_UP} />
+              <polygon points={ENVELOPE_OPEN_MIDDLE_PART} />
+            </animated.svg>
+          </ParallaxLayer>
+          {/*Info letter*/}
+          <ParallaxLayer
+            className='grid place-content-center'
+            offset={0}
+            speed={1}
+          >
+            <div
+              className='relative h-[370px] w-[300px] border-4 border-black bg-white'
+            >
+              <img
+                className=''
+                src={WEDDING_BG}
+                alt='hm'
+                width='290'
+                height='200'
+              />
+              <article
+                className='absolute top-5 pt-12 px-10 grid grid-cols-1 w-full'
+              >
+                <p
+                  className='whitespace-pre-wrap text-left pb-20'
+                >
+                  To whom it may concern,
+                </p>
+                <p
+                  className='whitespace-pre-wrap text-center'
+                >
+                  TJ and Mayenne...
+                </p>
+                <p
+                  className='whitespace-pre-wrap text-center'
+                >
+                  are getting married!
+                </p>
+                <p
+                  className='whitespace-pre-wrap text-center'
+                >
+                  5pm Sunday Oct 9, 2022
+                </p>
+                <p
+                  className='whitespace-pre-wrap text-center'
+                >
+                  312 Roosevelt Dr, Seymour, CT
+                </p>
+              </article>
+            </div>
+          </ParallaxLayer>
+          {/*Opened letter*/}
+          <ParallaxLayer
+            className='grid place-content-center'
+            offset={.25}
+            speed={.5}
+          >
+            <animated.svg
+              //className='border border-black'
+              style={{ margin: 0, width: 500, height: 500 }}
+              viewBox="-150 -150 300 300"
+              strokeWidth="5"
+              fill="#eeeeee"
+              stroke="rgb(45, 55, 71)"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              //strokeDasharray={156}
+              strokeDasharray={10000}
+            //strokeDashoffset={x.to(x => (1 - x) * 156)}
+            >
+              {/*<polygon points={ENVELOPE_OPEN} />
             <polyline points={ENVELOPE_OPEN_BOTTOM_OPENING} />
             <polyline points={ENVELOPE_OPEN_BOTTOM_FLAP_LEFT} />
             <polyline points={ENVELOPE_OPEN_BOTTOM_FLAP_RIGHT} />*/}
-            <polygon points={ENVELOPE_OPEN_BOTTOM_PART} />
-            <polyline points={ENVELOPE_OPEN_BOTTOM_FLAP_LEFT} />
-            <polyline points={ENVELOPE_OPEN_BOTTOM_FLAP_RIGHT} />
-          </animated.svg>
-        </ParallaxLayer>
-        {/* Page < 1 */}
-        {/* Pictures Section 1 */}
-        <ParallaxLayer offset={2} speed={.2}><img src={BREADSAUCE_FIRST} className='w-[20%] ml-[5%] rounded-lg' /></ParallaxLayer>
-        <ParallaxLayer offset={2.1} speed={.1}><img src={BREADSAUCE_SNOW} className='w-[25%] ml-[30%] rounded-lg' /></ParallaxLayer>
-        <ParallaxLayer offset={2.2} speed={.2}><img src={BREADSAUCE_THANKSGIVING} className='w-[25%] ml-[70%] rounded-lg' /></ParallaxLayer>
-        <ParallaxLayer offset={2.1} speed={2.1}><img src={disco_rabbits} className='w-[25%] ml-[50%] rounded-lg' /></ParallaxLayer>
-        <ParallaxLayer offset={2.7} speed={1}><img src={BREADSAUCE_WINE} className='w-[25%] ml-[10%] rounded-lg' /></ParallaxLayer>
-        <ParallaxLayer offset={2.7} speed={.4}><img src={SOLO_NEON} className='w-[15%] ml-[55%] rounded-lg' /></ParallaxLayer>
-        <ParallaxLayer offset={2.9} speed={.3}><img src={BREADSAUCE_WEIRD} className='w-[15%] ml-[75%] rounded-lg' /></ParallaxLayer>
-        <ParallaxLayer offset={2.9} speed={.1}><img src={BREADSAUCE_DATE} className='w-[25%] ml-[35%] rounded-lg' /></ParallaxLayer>
-        <ParallaxLayer offset={3} speed={.8}><img src={SOLO_HIKING} className='w-[10%] ml-[5%] rounded-lg' /></ParallaxLayer>
-        <ParallaxLayer offset={3} speed={.4}><img src={BREADSAUCE_CHRISTMAS} className='w-[15%] ml-[17%] rounded-lg' /></ParallaxLayer>
-        <ParallaxLayer offset={2.95} speed={.2}><img src={BREADSAUCE_OLIVES_OILS} className='w-[15%] ml-[5%] rounded-lg' /></ParallaxLayer>
-        <ParallaxLayer offset={3} speed={.25}><img src={PRO_PIC} className='w-[10%] ml-[63%] rounded-lg' /></ParallaxLayer>
-        {/* Page > 3*/}
-        {/*spacer so that the others don't catch up*/}
-        <ParallaxLayer
-          className='grid place-content-center'
-          sticky={{ start: 3.5, end: 4 }}
-        >
-          <h1>Work in Progress</h1>
-          <h1>Formal attire, but feel free to wear whatever you think makes you look your best.</h1>
-        </ParallaxLayer>
-        {/* Page > 4 */}
-        {/* Poem 1 */}
-        {/* Picture Section 2 - Composable CSS animation with anim xyz */}
-        {/* Joke Banter Page */}
-        {/* Practice */}
-        {/*<ParallaxLayer
+              <polygon points={ENVELOPE_OPEN_BOTTOM_PART} />
+              <polyline points={ENVELOPE_OPEN_BOTTOM_FLAP_LEFT} />
+              <polyline points={ENVELOPE_OPEN_BOTTOM_FLAP_RIGHT} />
+            </animated.svg>
+          </ParallaxLayer>
+          {/* Page < 1 */}
+          {/* Pictures Section 1 */}
+          {width < windowWidthBreakPoint ?
+            <>
+              <ParallaxLayer
+                //offset={1} speed={1}
+                sticky={{ start: 1, end: 2 }}
+              ><img src={BREADSAUCE_FIRST} className='rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer
+                //offset={2} speed={1}
+                sticky={{ start: 2, end: 3 }}
+              ><img src={BREADSAUCE_SNOW} className='rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer
+                //offset={3} speed={1}
+                sticky={{ start: 3, end: 4 }}
+              ><img src={BREADSAUCE_THANKSGIVING} className='rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer
+                //offset={4} speed={1}
+                sticky={{ start: 4, end: 5 }}
+              ><img src={disco_rabbits} className='rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer
+                //offset={5} speed={1}
+                sticky={{ start: 5, end: 6 }}
+              ><img src={BREADSAUCE_WINE} className='rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer
+                //offset={6} speed={1}
+                sticky={{ start: 6, end: 7 }}
+              ><img src={SOLO_NEON} className='rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer
+                //offset={7} speed={1}
+                sticky={{ start: 7, end: 8 }}
+              ><img src={BREADSAUCE_WEIRD} className='rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer
+                //offset={8} speed={1}
+                sticky={{ start: 8, end: 9 }}
+              ><img src={BREADSAUCE_DATE} className='rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer
+                //offset={9} speed={1}
+                sticky={{ start: 9, end: 10 }}
+              ><img src={SOLO_HIKING} className='rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer
+                //offset={10} speed={1}
+                sticky={{ start: 10, end: 11 }}
+              ><img src={BREADSAUCE_CHRISTMAS} className='rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer
+                //offset={11} speed={1}
+                sticky={{ start: 11, end: 12 }}
+              ><img src={BREADSAUCE_OLIVES_OILS} className='rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer
+                //offset={12} speed={1}
+                sticky={{ start: 12, end: 13 }}
+              ><img src={PRO_PIC} className='rounded-lg' /></ParallaxLayer>
+            </>
+            :
+            <>
+              <ParallaxLayer offset={1} speed={.2}><img src={BREADSAUCE_FIRST} className='w-[20%] ml-[5%] rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer offset={1.1} speed={.1}><img src={BREADSAUCE_SNOW} className='w-[25%] ml-[30%] rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer offset={1.2} speed={.2}><img src={BREADSAUCE_THANKSGIVING} className='w-[25%] ml-[70%] rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer offset={1.1} speed={2.1}><img src={disco_rabbits} className='w-[25%] ml-[50%] rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer offset={1.7} speed={1}><img src={BREADSAUCE_WINE} className='w-[25%] ml-[10%] rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer offset={1.7} speed={.4}><img src={SOLO_NEON} className='w-[15%] ml-[55%] rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer offset={1.9} speed={.3}><img src={BREADSAUCE_WEIRD} className='w-[15%] ml-[75%] rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer offset={1.9} speed={.1}><img src={BREADSAUCE_DATE} className='w-[25%] ml-[35%] rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer offset={2} speed={.8}><img src={SOLO_HIKING} className='w-[10%] ml-[5%] rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer offset={2} speed={.4}><img src={BREADSAUCE_CHRISTMAS} className='w-[15%] ml-[17%] rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer offset={1.95} speed={.2}><img src={BREADSAUCE_OLIVES_OILS} className='w-[15%] ml-[5%] rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer offset={2} speed={.25}><img src={PRO_PIC} className='w-[10%] ml-[63%] rounded-lg' /></ParallaxLayer>
+            </>
+          }
+          {/* Page > 3*/}
+          {/*spacer so that the others don't catch up*/}
+          <ParallaxLayer
+            className='grid place-content-center'
+            sticky={width < windowWidthBreakPoint ? { start: 14, end: 15 } : { start: 2.2, end: 2.7 }}
+          >
+            <h1>Work in Progress</h1>
+            <h1 className='px-3'>Formal attire, but feel free to wear whatever you think makes you look your best.</h1>
+          </ParallaxLayer>
+          {/* Page > 4 */}
+          {/* Poem 1 */}
+          {/* Picture Section 2 - Composable CSS animation with anim xyz */}
+          {/* Joke Banter Page */}
+          {/* Practice */}
+          {/*<ParallaxLayer
           className='grid place-content-center'
           offset={2.1}
           speed={1}
@@ -266,19 +282,20 @@ function App() {
             on mine.
           </h1>
       </ParallaxLayer>*/}
-        {/*Final Slide*/}
-        <ParallaxLayer
-          className='grid place-content-center'
-          //offset={19}
-          //speed={.05}
-          sticky={{ start: 19, end: 20 }}
-        >
-          <h1 className='text-8xl font-bold text-pink-300'>
-            Forever
-          </h1>
-        </ParallaxLayer>
-      </Parallax>
-    </main >
+          {/*Final Slide*/}
+          <ParallaxLayer
+            className='grid place-content-center'
+            //offset={19}
+            //speed={.05}
+            sticky={width < windowWidthBreakPoint ? { start: 16, end: 17 } : { start: 4, end: 5 }}
+          >
+            <h1 className='text-8xl font-bold text-pink-300'>
+              Forever
+            </h1>
+          </ParallaxLayer>
+        </Parallax>
+      </main>
+    </div >
   )
 }
 
