@@ -35,7 +35,7 @@ function App() {
   const windowWidthBreakPoint = 900
   return (
     <div
-      className='scroll-smooth font-caveat bg-repeat'
+      className='scroll-smooth font-caveat bg-repeat overflow-x-hidden'
       style={{ backgroundImage: ROSE_REPEAT }}
     >
       <ClosedLetter />
