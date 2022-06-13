@@ -1,20 +1,18 @@
 // Picture imports
 import WEDDING_BG from './assets/images/wedding-invite-bg2.png'
 // sauce solo
-import PRO_PIC from '../src/assets/images/sauce_solo/pro_pic.jpg'
 // gifs
 import disco_rabbits from './assets/images/gifs/disco_rabbits.gif'
-import umaru from './assets/images/gifs/umaru.gif'
 // breadsauce
 import BREADSAUCE_FIRST from '../src/assets/images/breadsauce/breadsauce_first.jpg'
 import BREADSAUCE_CHRISTMAS from '../src/assets/images/breadsauce/breadsauce_christmas.jpg'
 import BREADSAUCE_DATE from '../src/assets/images/breadsauce/breadsauce_date.jpg'
-import BREADSAUCE_NORMAL from '../src/assets/images/breadsauce/breadsauce_normal.jpg'
 import BREADSAUCE_OLIVES_OILS from '../src/assets/images/breadsauce/breadsauce_olives_oils.jpg'
 import BREADSAUCE_THANKSGIVING from '../src/assets/images/breadsauce/breadsauce_thanksgiving.jpg'
 import BREADSAUCE_SNOW from '../src/assets/images/breadsauce/breadsauce_snow.jpg'
-import BREADSAUCE_WEIRD from '../src/assets/images/breadsauce/breadsauce_weird.jpg'
 import BREADSAUCE_WINE from '../src/assets/images/breadsauce/breadsauce_wine.jpg'
+import BREADSAUCE_COOL from '../src/assets/images/breadsauce/breadsauce_cool.jpg'
+import BREADSAUCE_BEACH from '../src/assets/images/breadsauce/breadsauce_beach.jpg'
 // bread
 import SOLO_NEON from '../src/assets/images/bread_solo/solo_neon.jpg'
 import SOLO_HIKING from '../src/assets/images/bread_solo/solo_hiking.jpg'
@@ -27,7 +25,6 @@ import './index.css'
 import { ENVELOPE_FLAP_UP, ENVELOPE_OPEN_BOTTOM_FLAP_LEFT, ENVELOPE_OPEN_BOTTOM_FLAP_RIGHT, ENVELOPE_OPEN_BOTTOM_PART, ENVELOPE_OPEN_MIDDLE_PART } from './State/Envelope'
 import ClosedLetter from './ClosedLetter'
 import { useWindowWidth } from '@react-hook/window-size'
-import ROSE_REPEAT from './assets/images/white-rose-repeat.jpeg'
 // Variable Imports
 
 function App() {
@@ -41,7 +38,7 @@ function App() {
       <main className='grid place-content-center text-center text-2xl font-bold'>
         <Parallax
           id='info'
-          pages={width < windowWidthBreakPoint ? 17 : 5}
+          pages={width < windowWidthBreakPoint ? 15 : 5}
         >
           {/*Letter Opening Animation*/}
           {/*Villa Background*/}
@@ -171,41 +168,33 @@ function App() {
                 sticky={{ start: 3, end: 4 }}
               ><img src={BREADSAUCE_THANKSGIVING} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
-                //offset={4} speed={1}
-                sticky={{ start: 4, end: 5 }}
-              ><img src={disco_rabbits} className='rounded-lg' /></ParallaxLayer>
-              <ParallaxLayer
                 //offset={5} speed={1}
-                sticky={{ start: 5, end: 6 }}
+                sticky={{ start: 4, end: 5 }}
               ><img src={BREADSAUCE_WINE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 //offset={6} speed={1}
-                sticky={{ start: 6, end: 7 }}
+                sticky={{ start: 5, end: 6 }}
               ><img src={SOLO_NEON} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
-                //offset={7} speed={1}
-                sticky={{ start: 7, end: 8 }}
-              ><img src={BREADSAUCE_WEIRD} className='rounded-lg' /></ParallaxLayer>
-              <ParallaxLayer
                 //offset={8} speed={1}
-                sticky={{ start: 8, end: 9 }}
+                sticky={{ start: 6, end: 7 }}
               ><img src={BREADSAUCE_DATE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
-                //offset={9} speed={1}
-                sticky={{ start: 9, end: 10 }}
-              ><img src={SOLO_HIKING} className='rounded-lg' /></ParallaxLayer>
-              <ParallaxLayer
                 //offset={10} speed={1}
-                sticky={{ start: 10, end: 11 }}
+                sticky={{ start: 7, end: 8 }}
               ><img src={BREADSAUCE_CHRISTMAS} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 //offset={11} speed={1}
-                sticky={{ start: 11, end: 12 }}
+                sticky={{ start: 8, end: 9 }}
               ><img src={BREADSAUCE_OLIVES_OILS} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
-                //offset={12} speed={1}
-                sticky={{ start: 12, end: 13 }}
-              ><img src={PRO_PIC} className='rounded-lg' /></ParallaxLayer>
+                //offset={11} speed={1}
+                sticky={{ start: 9, end: 10 }}
+              ><img src={BREADSAUCE_BEACH} className='rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer
+                //offset={11} speed={1}
+                sticky={{ start: 10, end: 11 }}
+              ><img src={BREADSAUCE_COOL} className='rounded-lg' /></ParallaxLayer>
             </>
             :
             <>
@@ -215,19 +204,19 @@ function App() {
               <ParallaxLayer offset={1.1} speed={2.1}><img src={disco_rabbits} className='w-[25%] ml-[50%] rounded-lg' /></ParallaxLayer>
               <ParallaxLayer offset={1.7} speed={1}><img src={BREADSAUCE_WINE} className='w-[25%] ml-[10%] rounded-lg' /></ParallaxLayer>
               <ParallaxLayer offset={1.7} speed={.4}><img src={SOLO_NEON} className='w-[15%] ml-[55%] rounded-lg' /></ParallaxLayer>
-              <ParallaxLayer offset={1.9} speed={.3}><img src={BREADSAUCE_WEIRD} className='w-[15%] ml-[75%] rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer offset={1.9} speed={.3}><img src={BREADSAUCE_BEACH} className='w-[15%] ml-[75%] rounded-lg' /></ParallaxLayer>
               <ParallaxLayer offset={1.9} speed={.1}><img src={BREADSAUCE_DATE} className='w-[25%] ml-[35%] rounded-lg' /></ParallaxLayer>
               <ParallaxLayer offset={2} speed={.8}><img src={SOLO_HIKING} className='w-[10%] ml-[5%] rounded-lg' /></ParallaxLayer>
               <ParallaxLayer offset={2} speed={.4}><img src={BREADSAUCE_CHRISTMAS} className='w-[15%] ml-[17%] rounded-lg' /></ParallaxLayer>
-              <ParallaxLayer offset={1.95} speed={.2}><img src={BREADSAUCE_OLIVES_OILS} className='w-[15%] ml-[5%] rounded-lg' /></ParallaxLayer>
-              <ParallaxLayer offset={2} speed={.25}><img src={PRO_PIC} className='w-[10%] ml-[63%] rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer offset={1.95} speed={.2}><img src={BREADSAUCE_COOL} className='w-[15%] ml-[5%] rounded-lg' /></ParallaxLayer>
+              <ParallaxLayer offset={2} speed={.25}><img src={BREADSAUCE_OLIVES_OILS} className='w-[10%] ml-[63%] rounded-lg' /></ParallaxLayer>
             </>
           }
           {/* Page > 3*/}
           {/*spacer so that the others don't catch up*/}
           <ParallaxLayer
             className='grid place-content-center'
-            sticky={width < windowWidthBreakPoint ? { start: 14, end: 15 } : { start: 2.6, end: 2.7 }}
+            sticky={width < windowWidthBreakPoint ? { start: 12, end: 13 } : { start: 2.6, end: 2.7 }}
           //style={{ backgroundImage: `url(${ROSE_REPEAT})`, backgroundRepeat: 'repeat' }}
           >
             <h1>Work in Progress</h1>
@@ -291,7 +280,7 @@ function App() {
             className='grid place-content-center'
             //offset={19}
             //speed={.05}
-            sticky={width < windowWidthBreakPoint ? { start: 16, end: 17 } : { start: 3.7, end: 4 }}
+            sticky={width < windowWidthBreakPoint ? { start: 14, end: 15 } : { start: 3.7, end: 4 }}
           >
             <h1
               className='text-8xl font-bold text-pink-300'

@@ -102,9 +102,16 @@ TODO
 
 Create Static Pages
 
++ swap and remove any unneeded pictures
++ remove the gif and maybe some pictures to see if performance improves for mobile when not connected to wi-fi
+- create a loading sceen... Unfortunately, I don't exactly run a query. I somehow need to run it on IMG.
+- put the additional info after the opened letter
+- add donation button with venmo, paypal, and maybe cashapp
+- additional info includes attire, wedding registry info (cash is fine)
 - poetry page
 - picture and banter page
 
 Later
 
 - Host this site on AWS. See what you can do for free.
+
