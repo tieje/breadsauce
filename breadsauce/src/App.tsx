@@ -5,6 +5,7 @@ import './index.css'
 import { ENVELOPE_FLAP_UP, ENVELOPE_OPEN_BOTTOM_FLAP_LEFT, ENVELOPE_OPEN_BOTTOM_FLAP_RIGHT, ENVELOPE_OPEN_BOTTOM_PART, ENVELOPE_OPEN_MIDDLE_PART } from './State/Envelope'
 import ClosedLetter from './ClosedLetter'
 import { useWindowWidth } from '@react-hook/window-size'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // mobile imports
 // villa
@@ -64,7 +65,7 @@ function App() {
             speed={.1}
           >
             {width < windowWidthBreakPoint ?
-              <img
+              <LazyLoadImage
                 className='h-screen w-screen'
                 src={VILLA_MOBILE}
                 alt='villa bianca'
@@ -185,52 +186,52 @@ function App() {
                 className='grid place-content-center'
                 //offset={1} speed={1}
                 sticky={{ start: 1, end: 2 }}
-              ><img src={BREADSAUCE_FIRST_MOBILE} className='rounded-lg' /></ParallaxLayer>
+              ><LazyLoadImage src={BREADSAUCE_FIRST_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 className='grid place-content-center'
                 //offset={2} speed={1}
                 sticky={{ start: 2, end: 3 }}
-              ><img src={BREADSAUCE_SNOW_MOBILE} className='rounded-lg' /></ParallaxLayer>
+              ><LazyLoadImage src={BREADSAUCE_SNOW_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 className='grid place-content-center'
                 //offset={3} speed={1}
                 sticky={{ start: 3, end: 4 }}
-              ><img src={BREADSAUCE_THANKSGIVING_MOBILE} className='rounded-lg' /></ParallaxLayer>
+              ><LazyLoadImage src={BREADSAUCE_THANKSGIVING_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 className='grid place-content-center'
                 //offset={5} speed={1}
                 sticky={{ start: 4, end: 5 }}
-              ><img src={BREADSAUCE_WINE_MOBILE} className='rounded-lg' /></ParallaxLayer>
+              ><LazyLoadImage src={BREADSAUCE_WINE_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 className='grid place-content-center'
                 //offset={6} speed={1}
                 sticky={{ start: 5, end: 6 }}
-              ><img src={SOLO_NEON_MOBILE} className='rounded-lg' /></ParallaxLayer>
+              ><LazyLoadImage src={SOLO_NEON_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 className='grid place-content-center'
                 //offset={8} speed={1}
                 sticky={{ start: 6, end: 7 }}
-              ><img src={BREADSAUCE_DATE_MOBILE} className='rounded-lg' /></ParallaxLayer>
+              ><LazyLoadImage src={BREADSAUCE_DATE_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 className='grid place-content-center'
                 //offset={10} speed={1}
                 sticky={{ start: 7, end: 8 }}
-              ><img src={BREADSAUCE_CHRISTMAS_MOBILE} className='rounded-lg' /></ParallaxLayer>
+              ><LazyLoadImage src={BREADSAUCE_CHRISTMAS_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 className='grid place-content-center'
                 //offset={11} speed={1}
                 sticky={{ start: 8, end: 9 }}
-              ><img src={BREADSAUCE_OLIVES_OILS_MOBILE} className='rounded-lg' /></ParallaxLayer>
+              ><LazyLoadImage src={BREADSAUCE_OLIVES_OILS_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 className='grid place-content-center'
                 //offset={11} speed={1}
                 sticky={{ start: 9, end: 10 }}
-              ><img src={BREADSAUCE_BEACH_MOBILE} className='rounded-lg' /></ParallaxLayer>
+              ><LazyLoadImage src={BREADSAUCE_BEACH_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 className='grid place-content-center'
                 //offset={11} speed={1}
                 sticky={{ start: 10, end: 11 }}
-              ><img src={BREADSAUCE_COOL_MOBILE} className='rounded-lg' /></ParallaxLayer>
+              ><LazyLoadImage src={BREADSAUCE_COOL_MOBILE} className='rounded-lg' /></ParallaxLayer>
             </>
             :
             <>

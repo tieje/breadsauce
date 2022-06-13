@@ -91,6 +91,21 @@ x add white-rose repeating background
 Try and do this for you letter:
 https://codesandbox.io/s/github/pmndrs/react-spring/tree/master/demo/src/sandboxes/card?file=/src/App.tsx
 
+6/13/2022
+
+Decreasing the picture size worked, but what would be even better would be to lazy load pictures.
+
++ swap and remove any unneeded pictures
++ remove the gif and maybe some pictures to see if performance improves for mobile when not connected to wi-fi
++ switch import statements so that you load more important pictures and modules first
+x create a loading sceen... Unfortunately, I don't exactly run a query. I somehow need to run it on IMG.
++ crop every image manually to make a mobile version of the image
+    Instead of cropping, I'm just resizing to 640x640, which still decreases storage size significantly.
+- make images 400 pixels wide
+- use react-lazy-load-image-component
+    https://github.com/Aljullu/react-lazy-load-image-component
+
+
 Plan
 
 1. Create the static components first while studying react-spring
@@ -102,12 +117,6 @@ TODO
 
 Create Static Pages
 
-+ swap and remove any unneeded pictures
-+ remove the gif and maybe some pictures to see if performance improves for mobile when not connected to wi-fi
-+ switch import statements so that you load more important pictures and modules first
-x create a loading sceen... Unfortunately, I don't exactly run a query. I somehow need to run it on IMG.
-+ crop every image manually to make a mobile version of the image
-    Instead of cropping, I'm just resizing to 640x640, which still decreases storage size significantly.
 - put the additional info after the opened letter
 - add donation button with venmo, paypal, and maybe cashapp
 - additional info includes attire, wedding registry info (cash is fine)
