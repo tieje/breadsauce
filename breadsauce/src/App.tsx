@@ -1,3 +1,12 @@
+// Functional Imports
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import { animated } from 'react-spring'
+import './index.css'
+import { ENVELOPE_FLAP_UP, ENVELOPE_OPEN_BOTTOM_FLAP_LEFT, ENVELOPE_OPEN_BOTTOM_FLAP_RIGHT, ENVELOPE_OPEN_BOTTOM_PART, ENVELOPE_OPEN_MIDDLE_PART } from './State/Envelope'
+import ClosedLetter from './ClosedLetter'
+import { useWindowWidth } from '@react-hook/window-size'
+// villa
+import VILLA from '../src/assets/images/villa.jpeg'
 // Picture imports
 import WEDDING_BG from './assets/images/wedding-invite-bg2.png'
 // sauce solo
@@ -16,15 +25,6 @@ import BREADSAUCE_BEACH from '../src/assets/images/breadsauce/breadsauce_beach.j
 // bread
 import SOLO_NEON from '../src/assets/images/bread_solo/solo_neon.jpg'
 import SOLO_HIKING from '../src/assets/images/bread_solo/solo_hiking.jpg'
-// villa
-import VILLA from '../src/assets/images/villa.jpeg'
-// Functional Imports
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-import { animated } from 'react-spring'
-import './index.css'
-import { ENVELOPE_FLAP_UP, ENVELOPE_OPEN_BOTTOM_FLAP_LEFT, ENVELOPE_OPEN_BOTTOM_FLAP_RIGHT, ENVELOPE_OPEN_BOTTOM_PART, ENVELOPE_OPEN_MIDDLE_PART } from './State/Envelope'
-import ClosedLetter from './ClosedLetter'
-import { useWindowWidth } from '@react-hook/window-size'
 // Variable Imports
 
 function App() {
