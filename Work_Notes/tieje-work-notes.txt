@@ -101,10 +101,12 @@ Decreasing the picture size worked, but what would be even better would be to la
 x create a loading sceen... Unfortunately, I don't exactly run a query. I somehow need to run it on IMG.
 + crop every image manually to make a mobile version of the image
     Instead of cropping, I'm just resizing to 640x640, which still decreases storage size significantly.
-- make images 400 pixels wide
-- use react-lazy-load-image-component
++ make images 400 pixels wide
++ use react-lazy-load-image-component
     https://github.com/Aljullu/react-lazy-load-image-component
-
++ fixed the heart centering problem
++ put the additional info after the opened letter
++ add donation button and qr code with paypal
 
 Plan
 
@@ -117,13 +119,8 @@ TODO
 
 Create Static Pages
 
-- put the additional info after the opened letter
-- add donation button with venmo, paypal, and maybe cashapp
-- additional info includes attire, wedding registry info (cash is fine)
 - poetry page
-- picture and banter page
 
 Later
 
 - Host this site on AWS. See what you can do for free.
-
