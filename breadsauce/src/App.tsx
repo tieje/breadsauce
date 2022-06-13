@@ -5,11 +5,29 @@ import './index.css'
 import { ENVELOPE_FLAP_UP, ENVELOPE_OPEN_BOTTOM_FLAP_LEFT, ENVELOPE_OPEN_BOTTOM_FLAP_RIGHT, ENVELOPE_OPEN_BOTTOM_PART, ENVELOPE_OPEN_MIDDLE_PART } from './State/Envelope'
 import ClosedLetter from './ClosedLetter'
 import { useWindowWidth } from '@react-hook/window-size'
+
+// mobile imports
+// villa
+import VILLA_MOBILE from '../src/assets/images/mobile_images/villa_mobile.jpeg'
+// Picture imports
+// breadsauce
+import BREADSAUCE_FIRST_MOBILE from '../src/assets/images/mobile_images/breadsauce_first_mobile.jpg'
+import BREADSAUCE_CHRISTMAS_MOBILE from '../src/assets/images/mobile_images/breadsauce_christmas_mobile.jpg'
+import BREADSAUCE_DATE_MOBILE from '../src/assets/images/mobile_images/breadsauce_date_mobile.jpg'
+import BREADSAUCE_OLIVES_OILS_MOBILE from '../src/assets/images/mobile_images/breadsauce_olives_oils_mobile.jpg'
+import BREADSAUCE_THANKSGIVING_MOBILE from '../src/assets/images/mobile_images/breadsauce_thanksgiving_mobile.jpg'
+import BREADSAUCE_SNOW_MOBILE from '../src/assets/images/mobile_images/breadsauce_snow_mobile.jpg'
+import BREADSAUCE_WINE_MOBILE from '../src/assets/images/mobile_images/breadsauce_wine_mobile.jpg'
+import BREADSAUCE_COOL_MOBILE from '../src/assets/images/mobile_images/breadsauce_cool_mobile.jpg'
+import BREADSAUCE_BEACH_MOBILE from '../src/assets/images/mobile_images/breadsauce_beach_mobile.jpg'
+// bread
+import SOLO_NEON_MOBILE from '../src/assets/images/mobile_images/solo_neon_mobile.jpg'
+
+// desktop imports
 // villa
 import VILLA from '../src/assets/images/villa.jpeg'
 // Picture imports
 import WEDDING_BG from './assets/images/wedding-invite-bg2.png'
-// sauce solo
 // gifs
 import disco_rabbits from './assets/images/gifs/disco_rabbits.gif'
 // breadsauce
@@ -25,7 +43,6 @@ import BREADSAUCE_BEACH from '../src/assets/images/breadsauce/breadsauce_beach.j
 // bread
 import SOLO_NEON from '../src/assets/images/bread_solo/solo_neon.jpg'
 import SOLO_HIKING from '../src/assets/images/bread_solo/solo_hiking.jpg'
-// Variable Imports
 
 function App() {
   const width = useWindowWidth()
@@ -46,11 +63,19 @@ function App() {
             offset={0}
             speed={.1}
           >
-            <img
-              className='h-screen w-screen'
-              src={VILLA}
-              alt='villa bianca'
-            />
+            {width < windowWidthBreakPoint ?
+              <img
+                className='h-screen w-screen'
+                src={VILLA_MOBILE}
+                alt='villa bianca'
+              />
+              :
+              <img
+                className='h-screen w-screen'
+                src={VILLA}
+                alt='villa bianca'
+              />
+            }
           </ParallaxLayer>
           {/*Pieces behind the letter*/}
           <ParallaxLayer
@@ -155,46 +180,47 @@ function App() {
           {/* Pictures Section 1 */}
           {width < windowWidthBreakPoint ?
             <>
+              {/* Mobile pictures */}
               <ParallaxLayer
                 //offset={1} speed={1}
                 sticky={{ start: 1, end: 2 }}
-              ><img src={BREADSAUCE_FIRST} className='rounded-lg' /></ParallaxLayer>
+              ><img src={BREADSAUCE_FIRST_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 //offset={2} speed={1}
                 sticky={{ start: 2, end: 3 }}
-              ><img src={BREADSAUCE_SNOW} className='rounded-lg' /></ParallaxLayer>
+              ><img src={BREADSAUCE_SNOW_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 //offset={3} speed={1}
                 sticky={{ start: 3, end: 4 }}
-              ><img src={BREADSAUCE_THANKSGIVING} className='rounded-lg' /></ParallaxLayer>
+              ><img src={BREADSAUCE_THANKSGIVING_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 //offset={5} speed={1}
                 sticky={{ start: 4, end: 5 }}
-              ><img src={BREADSAUCE_WINE} className='rounded-lg' /></ParallaxLayer>
+              ><img src={BREADSAUCE_WINE_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 //offset={6} speed={1}
                 sticky={{ start: 5, end: 6 }}
-              ><img src={SOLO_NEON} className='rounded-lg' /></ParallaxLayer>
+              ><img src={SOLO_NEON_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 //offset={8} speed={1}
                 sticky={{ start: 6, end: 7 }}
-              ><img src={BREADSAUCE_DATE} className='rounded-lg' /></ParallaxLayer>
+              ><img src={BREADSAUCE_DATE_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 //offset={10} speed={1}
                 sticky={{ start: 7, end: 8 }}
-              ><img src={BREADSAUCE_CHRISTMAS} className='rounded-lg' /></ParallaxLayer>
+              ><img src={BREADSAUCE_CHRISTMAS_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 //offset={11} speed={1}
                 sticky={{ start: 8, end: 9 }}
-              ><img src={BREADSAUCE_OLIVES_OILS} className='rounded-lg' /></ParallaxLayer>
+              ><img src={BREADSAUCE_OLIVES_OILS_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 //offset={11} speed={1}
                 sticky={{ start: 9, end: 10 }}
-              ><img src={BREADSAUCE_BEACH} className='rounded-lg' /></ParallaxLayer>
+              ><img src={BREADSAUCE_BEACH_MOBILE} className='rounded-lg' /></ParallaxLayer>
               <ParallaxLayer
                 //offset={11} speed={1}
                 sticky={{ start: 10, end: 11 }}
-              ><img src={BREADSAUCE_COOL} className='rounded-lg' /></ParallaxLayer>
+              ><img src={BREADSAUCE_COOL_MOBILE} className='rounded-lg' /></ParallaxLayer>
             </>
             :
             <>
