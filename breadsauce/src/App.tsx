@@ -253,10 +253,11 @@ function App() {
             </footer>
           </>
           :
-          <Parallax
+          < Parallax
             id='info'
             pages={8}
           >
+            {/* Desktop */}
             {/*Letter Opening Animation*/}
             {/*Villa Background*/}
             <ParallaxLayer
@@ -451,11 +452,11 @@ function App() {
               //speed={.05}
               sticky={{ start: 3.7, end: 5 }}
             >
-              <button
+              <h1
                 className='text-8xl font-bold text-pink-300'
               >
                 Forever
-              </button>
+              </h1>
             </ParallaxLayer>
             <ParallaxLayer
               sticky={{ start: 6, end: 6 }}
