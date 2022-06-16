@@ -1,4 +1,5 @@
 // Functional Imports
+import { useState } from 'react'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { animated } from 'react-spring'
 import './index.css'
@@ -46,6 +47,7 @@ import BREADSAUCE_BEACH from '../src/assets/images/breadsauce/breadsauce_beach.j
 import SOLO_NEON from '../src/assets/images/bread_solo/solo_neon.jpg'
 import SOLO_HIKING from '../src/assets/images/bread_solo/solo_hiking.jpg'
 import AdditionalInfo from './components/AdditionalInfo'
+import BREAD_STARTER_PACK from './assets/images/bread_starter_pack.png'
 
 function App() {
   const width = useWindowWidth()
@@ -101,6 +103,16 @@ function App() {
       src: BREADSAUCE_COOL_MOBILE,
       alt: 'Cool picture of us.',
     },
+    {
+      id: 11,
+      src: BREAD_STARTER_PACK,
+      alt: 'bread starter pack'
+    },
+    {
+      id: 12,
+      src: "https://i.imgflip.com/6jw9gu.jpg",
+      alt: 'wheat, no, bread, yes'
+    }
   ]
   return (
     <div
@@ -243,7 +255,7 @@ function App() {
           :
           <Parallax
             id='info'
-            pages={5}
+            pages={8}
           >
             {/*Letter Opening Animation*/}
             {/*Villa Background*/}
@@ -437,17 +449,37 @@ function App() {
               className='grid place-content-center'
               //offset={19}
               //speed={.05}
-              sticky={{ start: 3.7, end: 4 }}
+              sticky={{ start: 3.7, end: 5 }}
             >
-              <h1
+              <button
                 className='text-8xl font-bold text-pink-300'
               >
                 Forever
-              </h1>
+              </button>
+            </ParallaxLayer>
+            <ParallaxLayer
+              sticky={{ start: 6, end: 6 }}
+              className='grid place-content-center'
+            >
+              <LazyLoadImage
+                src={BREAD_STARTER_PACK}
+                alt='bread starter pack'
+              />
+            </ParallaxLayer>
+            <ParallaxLayer
+              sticky={{ start: 7, end: 8 }}
+              className='grid place-content-center'
+            >
+              <LazyLoadImage
+                className='border border-black'
+                src="https://i.imgflip.com/6jw9gu.jpg"
+                title="made at imgflip.com"
+                alt='wheat_no_bread'
+              />
             </ParallaxLayer>
           </Parallax>
         }
-      </main>
+      </main >
     </div >
   )
 }
