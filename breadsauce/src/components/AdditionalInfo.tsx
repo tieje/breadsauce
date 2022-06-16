@@ -12,11 +12,15 @@ const AdditionalInfo = () => {
                     alt='qr code for paypal'
                 />
             </div>
-            <a href='https://www.paypal.com/donate/?business=FMS4B29339JES&no_recurring=1&item_name=A+donation+for+the+wedding%2C+for+the+honeymoon%2C+and+for+the+rest+of+our+lives.+Thank+you+very+much+donating.+%3A%29&currency_code=USD'
-                className='border border-black rounded-full hover:bg-pink-200 m-5 px-3'
+            <div
+                className='w-full grid place-content-center'
             >
-                Donate With Paypal
-            </a>
+                <a href='https://www.paypal.com/donate/?business=FMS4B29339JES&no_recurring=1&item_name=A+donation+for+the+wedding%2C+for+the+honeymoon%2C+and+for+the+rest+of+our+lives.+Thank+you+very+much+donating.+%3A%29&currency_code=USD'
+                    className='border border-pink-500 rounded-full hover:bg-pink-200 m-5 px-3 shadow-lg lg:w-52'
+                >
+                    Donate With Paypal
+                </a>
+            </div>
             <div>(Paypal QR Code)</div>
             <h1 className='px-3'>Formal attire, but feel free to wear whatever you think makes you look your best.</h1>
             <h1 className='px-3'>While there is no wedding registry, we would appreciate cash. </h1>
