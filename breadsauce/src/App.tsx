@@ -118,7 +118,7 @@ function App() {
     <div
       className='scroll-smooth font-caveat overflow-x-hidden'
     >
-      <ClosedLetter />
+      {width < 1000 ? null : <ClosedLetter />}
       <main className='grid place-content-center text-center text-2xl font-bold'>
         {width < windowWidthBreakPoint ?
           <>
@@ -453,7 +453,7 @@ function App() {
               sticky={{ start: 3.7, end: 5 }}
             >
               <h1
-                className='text-8xl font-bold text-pink-300'
+                className='text-8xl font-bold text-pink-500'
               >
                 Forever
               </h1>

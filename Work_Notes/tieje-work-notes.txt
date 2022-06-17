@@ -108,10 +108,11 @@ x create a loading sceen... Unfortunately, I don't exactly run a query. I someho
 + put the additional info after the opened letter
 + add donation button and qr code with paypal
 
-Plan
+6/16/2022
 
-1. Create the static components first while studying react-spring
-2. Add animation later?
++ added memes
+x prevent scrolling until the user clicks on the page
+    + made it the background for desktop instead
 
 TODO
 
