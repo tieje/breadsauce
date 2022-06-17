@@ -110,17 +110,14 @@ x create a loading sceen... Unfortunately, I don't exactly run a query. I someho
 
 6/16/2022
 
+This will be the final product.
+
 + added memes
 x prevent scrolling until the user clicks on the page
     + made it the background for desktop instead
+x get poems from Mayenne
 
 TODO
-
-- get poems from Mayenne
-
-Create Static Pages
-
-- poetry page
 
 Later
 

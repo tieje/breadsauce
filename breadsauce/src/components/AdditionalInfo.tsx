@@ -25,9 +25,8 @@ const AdditionalInfo = () => {
                     </a>
                 </div>
                 <div>(Paypal QR Code)</div>
-                <h1 className='px-3'>Formal attire, but feel free to wear whatever you think makes you look your best.</h1>
-                <h1 className='px-3'>While there is no wedding registry, we would appreciate cash. </h1>
-                <h1>Work in Progress</h1>
+                <h1 className='px-3'>Formal attire. The theme is golden champagne color.</h1>
+                <h1 className='px-3'>While there is no wedding registry, we would appreciate cash.</h1>
             </div>
         </div >
     )
