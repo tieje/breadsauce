@@ -15,6 +15,7 @@ const AdditionalInfo = () => {
                         alt='qr code for paypal'
                     />
                 </div>
+                <div>(Paypal QR Code)</div>
                 <div
                     className='w-full grid place-content-center'
                 >
@@ -24,7 +25,6 @@ const AdditionalInfo = () => {
                         Donate With Paypal
                     </a>
                 </div>
-                <div>(Paypal QR Code)</div>
                 <h1 className='px-3'>Formal attire. The theme is golden champagne color.</h1>
                 <h1 className='px-3'>While there is no wedding registry, we would appreciate cash.</h1>
             </div>
