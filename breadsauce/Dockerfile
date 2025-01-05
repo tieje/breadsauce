@@ -1,4 +1,3 @@
-#FROM tieje/rpi4_frontend:latest
 FROM node:16.14.2
 WORKDIR /breadsauce
 RUN apt-get update
@@ -10,3 +9,4 @@ RUN yarn install
 COPY . .
 ENV PATH /breadsauce/node_modules/.bin:$PATH
 RUN npm run build
+CMD serve -l 3001 -s dist
