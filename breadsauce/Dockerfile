@@ -9,4 +9,4 @@ RUN yarn install
 COPY . .
 ENV PATH /breadsauce/node_modules/.bin:$PATH
 RUN npm run build
-CMD serve -l 3001 -s dist
+CMD serve -l 80 -s dist
